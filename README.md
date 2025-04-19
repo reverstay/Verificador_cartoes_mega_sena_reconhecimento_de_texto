@@ -1,0 +1,1 @@
+# Verificador_cartoes_mega_sena_reconhecimento_de_texto
