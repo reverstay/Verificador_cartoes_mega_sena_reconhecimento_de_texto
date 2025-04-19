@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head><title>Jogos Mega‑Sena OCR</title></head>
+  <body>
+    <h1>Envie um cartão</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="cartao" accept="image/*" required>
+      <button type="submit">Processar</button>
+    </form>
+    <hr>
+    <h2>Jogos Capturados</h2>
+    <ul>
+    {% for j in jogos %}
+      <li>
+        {{ j.criado_em.strftime("%Y-%m-%d %H:%M") }} —
+        <strong>{{ j.numeros }}</strong>
+        (imagem: {{ j.imagem }})
+      </li>
+    {% else %}
+      <li>nenhum registro ainda</li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>
